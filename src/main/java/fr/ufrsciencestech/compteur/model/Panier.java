@@ -25,11 +25,7 @@ public class Panier {
 
     //groupe 2
     public ArrayList<Fruit> getFruits() {  //accesseur du premier attribut
-<<<<<<< HEAD
-       return this.fruits;
-=======
        return fruits;
->>>>>>> 1c1fbf9fef86b9d93351abc107234b93559ea5c9
     }
 
     public void setFruits(ArrayList<Fruit> fruits) { //modificateur du premier attribut
