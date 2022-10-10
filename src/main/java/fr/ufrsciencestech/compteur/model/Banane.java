@@ -27,7 +27,7 @@ public class Banane implements Fruit{
     }
 
     public void setPrix(double prix){
-	this.prix=prix;
+        this.prix = prix < 0 ? -prix : prix;
     }
 
     public String getOrigine(){
@@ -35,7 +35,10 @@ public class Banane implements Fruit{
     }
 
     public void setOrigine(String origine){
-	this.origine=origine;
+	if(origine.equals(""))
+            this.origine = "Espagne";  //Espagne par défaut
+	else
+            this.origine = origine;
     }
 
     @Override

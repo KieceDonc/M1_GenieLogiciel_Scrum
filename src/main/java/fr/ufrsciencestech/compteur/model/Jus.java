@@ -34,12 +34,12 @@ public class Jus implements Fruit {
         return "Jus de " + f.toString() + " et le prix du jus est à " + f.getPrix()*1.2 + " euros";
     }
 
-    public static void main (String[] args){
+  /*  public static void main (String[] args){
         //Ecrire ici vos tests
         Jus j = new Jus(new Banane());
 	       System.out.println("premier test jus");
          
          System.out.println(j.toString());
 
-   }
+   }*/
 }

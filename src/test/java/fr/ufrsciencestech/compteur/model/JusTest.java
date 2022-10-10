@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  * @author vr144361
  */
 public class JusTest {
-    Jus j;
+    //Jus j;
     public JusTest() {
-        j= new Jus(new Cerise());
+        //j= new Jus(new Cerise());
     }
     
     @BeforeClass
@@ -43,12 +43,12 @@ public class JusTest {
     @Test
     public void testIsSeedless() {
         System.out.println("isSeedless");
-        Jus instance = null;
-        boolean expResult = false;
+        Jus instance = new Jus(new Cerise());
+        boolean expResult = true;
         boolean result = instance.isSeedless();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -57,12 +57,12 @@ public class JusTest {
     @Test
     public void testGetPrix() {
         System.out.println("getPrix");
-        Jus instance = null;
-        double expResult = 0.0;
+        Jus instance = new Jus(new Cerise());
+        double expResult =(double) 0.96;
         double result = instance.getPrix();
-        assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(expResult == result);
+        // TODO review the generatsed test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -93,16 +93,6 @@ public class JusTest {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of main method, of class Jus.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Jus.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+
     
 }
