@@ -5,7 +5,7 @@ public class Banane implements Fruit{
 
     public Banane()
     {
-        this.prix = 0.5;  //prix en euros
+        this.prix = 2;  //prix en euros
         this.origine="Espagne";
     }
 
@@ -44,7 +44,7 @@ public class Banane implements Fruit{
     }
 
     @Override
-    public boolean equals(Object o){  //predicat pour tester si 2 oranges sont equivalentes
+    public boolean equals(Object o){  //predicat pour tester si 2 bananes sont equivalentes
         if(o != null && getClass() == o.getClass()){
             Banane b = (Banane) o;
             return (prix == b.prix && origine.equals(b.origine));
@@ -52,16 +52,14 @@ public class Banane implements Fruit{
         return false;
     }
 
-    public boolean isSeedless() {  //predicat indiquant qu'une orange a des pepins
+    public boolean isSeedless() {  //predicat indiquant qu'une Banane a des pepins
         return false;
     }
 
-
     public static void main (String[] args){
         //Ecrire ici vos tests
-	       System.out.println("premier test Banane");
-         Banane b = new Banane(10,"france");
-         System.out.println(b.toString());
-
+	System.out.println("premier test Banane");
+        Banane b = new Banane(10,"france");
+        System.out.println(b.toString());
    }
 }

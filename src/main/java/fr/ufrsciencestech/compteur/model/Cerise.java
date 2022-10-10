@@ -5,7 +5,7 @@ public class Cerise implements Fruit{
 
     public Cerise()
     {
-        this.prix = 0.5;  //prix en euros
+        this.prix = 0.8;  //prix en euros
         this.origine="Belgique";
     }
 
@@ -40,11 +40,11 @@ public class Cerise implements Fruit{
 
     @Override
     public String toString(){
-        return "Banane de " + origine + " a " + prix + " euros";
+        return "Cerise de " + origine + " a " + prix + " euros";
     }
 
     @Override
-    public boolean equals(Object o){  //predicat pour tester si 2 oranges sont equivalentes
+    public boolean equals(Object o){  //predicat pour tester si 2 cerises sont equivalentes
         if(o != null && getClass() == o.getClass()){
             Cerise b = (Cerise) o;
             return (prix == b.prix && origine.equals(b.origine));
@@ -52,16 +52,15 @@ public class Cerise implements Fruit{
         return false;
     }
 
-    public boolean isSeedless() {  //predicat indiquant qu'une orange a des pepins
-        return false;
+    public boolean isSeedless() {  //predicat indiquant qu'une cerise a un noyeau
+        return true;
     }
 
 
     public static void main (String[] args){
         //Ecrire ici vos tests
-	       System.out.println("premier test Cerise");
-         Cerise b = new Cerise(10,"france");
-         System.out.println(b.toString());
-
+	System.out.println("premier test Cerise");
+        Cerise b = new Cerise(10,"france");
+        System.out.println(b.toString());
    }
 }
