@@ -32,6 +32,10 @@ public class Macedoine implements Fruit {
         this.lstFruits.add(f);
     }
     
+    public void remove(int i){
+        this.lstFruits.remove(i);
+    }
+    
     public String ToString(){
         String s = "La macédoine contient : ";
         for(int i=0;i<this.lstFruits.size();i++){
@@ -58,9 +62,9 @@ public class Macedoine implements Fruit {
         if(!(o.getClass().equals(Panier.class))){
             return false;
         }else{
-            Panier panier2 = (Panier) o;
+            Macedoine m2 = (Macedoine) o;
             ArrayList<Fruit> fruitsP1 = this.lstFruits;
-            ArrayList<Fruit> fruitsP2 = new ArrayList<>(panier2.getFruits());
+            ArrayList<Fruit> fruitsP2 = new ArrayList<>(m2.getMacedoine());
 
             if(!(fruitsP1.size() == fruitsP2.size())){
                 return false;
