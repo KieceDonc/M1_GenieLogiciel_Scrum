@@ -25,15 +25,15 @@ public class Panier {
 
     //groupe 2
     public ArrayList<Fruit> getFruits() {  //accesseur du premier attribut
-       return null;
+       return this.fruits;
     }
 
     public void setFruits(ArrayList<Fruit> fruits) { //modificateur du premier attribut
-
+        this.fruits = fruits;
     }
 
     public int getTaillePanier(){  //accesseur retournant la taille allouee pour l'attibut fruits
-        return 0;
+        return this.fruits.size();
     }
 
 
@@ -94,7 +94,7 @@ public class Panier {
         }else{
             Panier panier2 = (Panier) o;
             ArrayList<Fruit> fruitsP1 = fruits;
-            ArrayList<Fruit> fruitsP2 = new ArrayList<>(panier2.getFruits());;
+            ArrayList<Fruit> fruitsP2 = new ArrayList<>(panier2.getFruits());
 
             if(!(fruitsP1.size() == fruitsP2.size())){
                 return false;
