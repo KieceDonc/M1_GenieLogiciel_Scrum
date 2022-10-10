@@ -23,19 +23,25 @@ public class Cerise implements Fruit{
     }
 
     public double getPrix(){
-	return prix;
+	return this.prix;
     }
 
     public void setPrix(double prix){
-	this.prix=prix;
+        if(prix < 0)
+	    this.prix = -prix; 
+        else
+            this.prix=prix;
     }
 
     public String getOrigine(){
-	return origine;
+	return this.origine;
     }
 
     public void setOrigine(String origine){
-	this.origine=origine;
+        if(origine.equals(""))
+            this.origine = "Belgique"; 
+        else
+            this.origine=origine;
     }
 
     @Override
