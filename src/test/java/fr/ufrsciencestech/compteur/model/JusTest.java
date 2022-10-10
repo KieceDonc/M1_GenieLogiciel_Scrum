@@ -16,8 +16,9 @@ import static org.junit.Assert.*;
  * @author vr144361
  */
 public class JusTest {
-    
+    Jus j;
     public JusTest() {
+        j= new Jus(new Cerise());
     }
     
     @BeforeClass
