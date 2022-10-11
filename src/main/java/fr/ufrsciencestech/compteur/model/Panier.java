@@ -29,7 +29,10 @@ public class Panier {
     }
 
     public void setFruits(ArrayList<Fruit> fruits) { //modificateur du premier attribut
-        this.fruits = fruits;
+        if (this.getContenanceMax() >= fruits.size())
+            this.fruits = fruits;
+        else
+            this.fruits = new ArrayList<Fruit>();
     }
 
     public int getTaillePanier(){  //accesseur retournant la taille allouee pour l'attibut fruits
@@ -39,6 +42,10 @@ public class Panier {
 
     public int getContenanceMax(){  //accesseur du second attribut
 	return this.contenanceMax;
+    }
+    
+    public void setContenanceMax(int contenanceMax){  
+	this.contenanceMax = contenanceMax;
     }
 
     //groupe 3
