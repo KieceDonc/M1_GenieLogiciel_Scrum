@@ -24,10 +24,7 @@ public class MacedoineTest {
     
     @Before
     public void setUp() {
-        Fruit cerise = new Cerise();
-        Fruit banane = new Banane();
-        this.m.ajoute(cerise);
-        this.m.ajoute(banane);
+        
     }
     
     @After
@@ -40,14 +37,14 @@ public class MacedoineTest {
      @Test
     public void testGetPrix() {
         System.out.println("getPrix");
-        double prix = 2.8;
+        double prix = 5.6;
         assertTrue(m.getPrix() == prix);
     }
     
     @Test
     public void testAjoute() {
         System.out.println("Ajoute");
-        int cpt = 2;
+        int cpt =4;
         m.ajoute(new Banane());
         assertTrue(m.getMacedoine().size() == cpt+1);
     }
@@ -55,7 +52,7 @@ public class MacedoineTest {
     @Test
     public void testRemove() {
         System.out.println("Remove");
-        int cpt = 2;
+        int cpt = 4;
         m.remove(1);
         assertTrue(m.getMacedoine().size() == cpt-1);
     }
@@ -64,10 +61,7 @@ public class MacedoineTest {
     public void testEquals() {
         System.out.println("Equals");
         Macedoine m2 = new Macedoine();
-        Fruit cerise = new Cerise();
-        Fruit banane = new Banane();
-        m2.ajoute(cerise);
-        m2.ajoute(banane);
+
         assertEquals(m,m2);
     }
     
