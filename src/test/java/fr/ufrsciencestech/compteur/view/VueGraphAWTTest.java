@@ -34,7 +34,7 @@ public class VueGraphAWTTest {
         c.setModele(m);
         c.setVue(vueg);*/
         m.addObserver(vueg);
-        vueg.addControleur(c);
+        /*vueg.addControleur(c);*/
     }
     
     @After
@@ -58,7 +58,7 @@ public class VueGraphAWTTest {
         assertEquals(vueg.getAffiche().getText(), "0");       
     }
     
-
+/*
     @Test
     public void testIncr() {
         System.out.println("incr");
@@ -100,7 +100,7 @@ public class VueGraphAWTTest {
         minus.dispatchEvent(ae2); 
         assertEquals(res.getText(), "0");
     }
-    
+*/    
     @Test
     public void testDecrZero() {
         System.out.println("remove");
