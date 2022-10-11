@@ -71,12 +71,12 @@ public class JusTest {
     @Test
     public void testGetOrigine() {
         System.out.println("getOrigine");
-        Jus instance = null;
-        String expResult = "";
+        Jus instance = new Jus(new Cerise(.58,"Belgique"));
+        String expResult = "Belgique";
         String result = instance.getOrigine();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -85,12 +85,12 @@ public class JusTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Jus instance = null;
-        String expResult = "";
+        Jus instance = new Jus(new Cerise());
+        String expResult = "Jus de " +(new Cerise()).toString() +" et le prix du jus est à "+(new Cerise()).getPrix()*1.2 + " euros" ;
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
 
