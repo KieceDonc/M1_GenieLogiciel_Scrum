@@ -16,7 +16,8 @@ public class Panier {
 
     @Override
     public String toString(){  //affichage de ce qui est contenu dans le panier : liste des fruits presents
-        String msg = "Les fruits dans le panier sont: \n";
+        String msg = "Le panier peut contenir encore " + (this.getContenanceMax() - this.getTaillePanier()) + " fruits.\n" 
+                + "Les fruits dans le panier sont: \n";
         for(int i = 0; i < fruits.size(); i++){
           msg += getFruit(i) +", \n";
         }
@@ -71,6 +72,9 @@ public class Panier {
         if ( !this.estVide() )
         {
             this.fruits.remove(this.getTaillePanier()-1);
+        }
+        else{
+            throw new PanierVideException();
         }
     }
 

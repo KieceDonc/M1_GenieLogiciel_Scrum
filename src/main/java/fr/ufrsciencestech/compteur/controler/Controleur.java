@@ -10,6 +10,7 @@ import fr.ufrsciencestech.compteur.view.*;
 import fr.ufrsciencestech.compteur.model.*;
 import fr.ufrsciencestech.compteur.model.Panier;
 import fr.ufrsciencestech.compteur.model.PanierPleinException;
+import fr.ufrsciencestech.compteur.model.PanierVideException;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.JComboBox;
@@ -35,24 +36,35 @@ public class Controleur implements ActionListener {
             else if(index == 1){
                 f = new Cerise();
             }
+            else{
+                f = new Macedoine();
+            }
             try{
                 m.ajout(f);
+                this.vg.getJtextArea().setText("");
+                this.vg.getJtextArea().append(m.toString());
             }
-            catch(PanierPleinException p){System.out.println("Panier plein");}
-            this.vg.getJtextArea().setText("");
-            this.vg.getJtextArea().append(m.toString());
+            catch(PanierPleinException p){
+                this.vg.getJtextArea().setText("");
+                this.vg.getJtextArea().append(m.toString() +"\n\n PANIER PLEIN");
+                System.out.println("Panier plein");
+            }
+            
         }
         else if(((Component)e.getSource()).getName().equals("RemoveLastFruit")){
             try{
                 m.retrait();
+                this.vg.getJtextArea().setText("");
+                this.vg.getJtextArea().append(m.toString());
             }
-            catch(PanierVideException p){System.out.println("Panier Vide");}
-            this.vg.getJtextArea().setText("");
-            this.vg.getJtextArea().append(m.toString());
+            catch(PanierVideException pp){
+                System.out.println("Panier Vide");
+                this.vg.getJtextArea().setText("");
+                this.vg.getJtextArea().append("PANIER VIDE");
+            }
+            
         }
-        else{
-            System.out.println(((Component)e.getSource()).getName());
-        }
+        
     }
     public void setModele(Panier m){
         this.m = m;

@@ -17,6 +17,14 @@ public class Macedoine implements Fruit {
     
     public Macedoine(){
        this.lstFruits = new ArrayList<Fruit>();
+       Fruit f1 = new Banane();
+       Fruit f2 = new Banane();
+       Fruit f3 = new Cerise();
+       Fruit f4 = new Cerise();
+       this.ajoute(f1);
+       this.ajoute(f2);
+       this.ajoute(f3);
+       this.ajoute(f4);
        this.seedless = false;
     }
     
@@ -36,11 +44,13 @@ public class Macedoine implements Fruit {
         this.lstFruits.remove(i);
     }
     
-    public String ToString(){
-        String s = "La macédoine contient : ";
+     @Override
+    public String toString(){
+        String s = "Macédoine de : ";
         for(int i=0;i<this.lstFruits.size();i++){
-            s+=lstFruits.get(i)+", \n";
+            s+=lstFruits.get(i).getClass().getSimpleName()+", ";
         }
+        s+=" à "+ getPrix() + " euros ";
         return s;
     }
     

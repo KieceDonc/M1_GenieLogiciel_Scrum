@@ -5,6 +5,7 @@
 package fr.ufrsciencestech.compteur.view;
 
 import fr.ufrsciencestech.compteur.controler.Controleur;
+import java.awt.Dimension;
 import java.util.Observable;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -23,7 +24,8 @@ public class VueGSwingNew extends javax.swing.JFrame {
         this.pack();
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1000, 1000);
+        this.setSize(500, 700);
+        
     }
     
     public void addControleur(Controleur c){
@@ -62,7 +64,9 @@ public class VueGSwingNew extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.GridLayout(3, 1));
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         AddFruit.setText("+");
         AddFruit.setName("AddFruit"); // NOI18N
@@ -73,22 +77,23 @@ public class VueGSwingNew extends javax.swing.JFrame {
         });
         jPanel2.add(AddFruit);
 
-        ComboFruits.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banane", "Cerise" }));
+        ComboFruits.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banane", "Cerise", "Macédoine de banane et cerise" }));
         ComboFruits.setName("ComboFruits"); // NOI18N
         jPanel2.add(ComboFruits);
 
-        jPanel1.add(jPanel2);
+        jPanel1.add(jPanel2, java.awt.BorderLayout.NORTH);
 
         AfficheInfos.setColumns(20);
         AfficheInfos.setRows(5);
         jScrollPane1.setViewportView(AfficheInfos);
 
-        jPanel1.add(jScrollPane1);
+        jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         RemoveLastFruit.setText("-");
         RemoveLastFruit.setMaximumSize(new java.awt.Dimension(10, 10));
+        RemoveLastFruit.setMinimumSize(new java.awt.Dimension(10, 10));
         RemoveLastFruit.setName("RemoveLastFruit"); // NOI18N
-        jPanel1.add(RemoveLastFruit);
+        jPanel1.add(RemoveLastFruit, java.awt.BorderLayout.SOUTH);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
