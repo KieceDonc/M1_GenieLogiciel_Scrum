@@ -29,10 +29,10 @@ public class VueGraphAWTTest {
     public void setUp() {
         vueg = new VueGraphAWT();
         m = new Modele();
-        c = new Controleur();
+        /*c = new Controleur();
         
         c.setModele(m);
-        c.setVue(vueg);
+        c.setVue(vueg);*/
         m.addObserver(vueg);
         vueg.addControleur(c);
     }

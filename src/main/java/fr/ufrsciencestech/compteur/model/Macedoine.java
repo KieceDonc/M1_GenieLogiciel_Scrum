@@ -59,7 +59,7 @@ public class Macedoine implements Fruit {
     @Override
     public boolean equals(Object o){  ///predicat pour tester si 2 paniers sont equivalents : s'ils contiennent exactement les memes fruits
         //TODO : Test equals function
-        if(!(o.getClass().equals(Panier.class))){
+        if(!(o.getClass().equals(Macedoine.class))){
             return false;
         }else{
             Macedoine m2 = (Macedoine) o;

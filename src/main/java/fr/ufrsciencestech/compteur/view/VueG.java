@@ -14,7 +14,7 @@ import java.util.*;
  * @author celine
  */
 public interface VueG extends Observer {
-    @Override
+    
     public void update(Observable m, Object o);
     public void addControleur(Controleur c);
     

@@ -7,7 +7,7 @@ package fr.ufrsciencestech.compteur;
 
 import fr.ufrsciencestech.compteur.controler.Controleur;
 import fr.ufrsciencestech.compteur.view.*;
-import fr.ufrsciencestech.compteur.model.Modele;
+import fr.ufrsciencestech.compteur.model.*;
 
 //utilise pour springIoC :
 import javax.swing.*;
@@ -19,20 +19,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author celine
  */
 public class TestMVC {
-    private VueG vueg;      //pour pouvoir changer de vue si on le souhaite
+    private VueGSwingNew vueg;      //pour pouvoir changer de vue si on le souhaite
     private Controleur controleur;  //pour pouvoir changer de controleur si on le souhaite
     
     /**
      * @return the vueg
      */
-    public VueG getVueg() {
+    public VueGSwingNew getVueg() {
         return vueg;
     }
 
     /**
      * @param vueg the vueg to set
      */
-    public void setVueg(VueG vueg) {
+    public void setVueg(VueGSwingNew vueg) {
         this.vueg = vueg;
     }
 
@@ -51,34 +51,28 @@ public class TestMVC {
     }
     
     public TestMVC(){
-        //sans utiliser SpringIoC :
-        vueg = new VueGraphSwing();
+      
+        vueg = new VueGSwingNew();
+        
+        Panier p = new Panier(10);
+        Cerise c = new Cerise();
+        Banane b = new Banane();
+        try{
+            p.ajout(b);
+            p.ajout(c);
+        }
+        catch(PanierPleinException e){System.out.println("Panier plein");}
         controleur = new Controleur();
-        Modele modele = new Modele();
-        VueConsole vuec = new VueConsole();
-
-        controleur.setModele(modele);                 
-        modele.addObserver(vueg);        
-        modele.addObserver(vuec);         
+        controleur.setModele(p);  
+        controleur.setVue(vueg);     
+        //controleur.
         vueg.addControleur(controleur);
+        vueg.getJtextArea().append(p.toString());
     }
     
     public static void main(String[] args){
         TestMVC test = new TestMVC();    //sans utiliser SpringIoC
         
-        //La meme chose mais avec SpringIoC :
-        /*ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        TestMVC test = (TestMVC)context.getBean("MVC");  //SpringIoC
-        test.setControleur( (Controleur)context.getBean("Controleur") );  //SpringIoC
-        test.setVueg( (VueG)context.getBean("Vue") );   //SpringIoC
-         
-        Modele m = new Modele(); 
-        test.getControleur().setModele(m);  
         
-        m.addObserver(test.getVueg());
-        test.getVueg().addControleur(test.getControleur());
-        
-        VueConsole vuec = new VueConsole();
-        m.addObserver(vuec);  */
     }
 }

@@ -30,9 +30,9 @@ public class VueGraphSwingTest {
         m = new Modele();
         c = new Controleur();
         
-        c.setModele(m);
+        /*c.setModele(m);
         c.setVue(vueg);
-        m.addObserver(vueg);
+        m.addObserver(vueg);*/
         vueg.addControleur(c);
     }
     
